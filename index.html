@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAYFLOW — Premium Payment Infrastructure</title>
+  <meta name="description" content="Payflow is a global payment infrastructure platform engineered for friction-free money movement and high-velocity commerce.">
+  
+  <!-- Typography: Bodoni Moda (Editorial Display), Instrument Sans (Functional), Caveat Brush (Human Annotation) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Caveat+Brush&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       CUSTOM DESKTOP CURSOR
+       ========================================== -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- ==========================================
+       EDITORIAL SCROLL PROGRESS RAIL
+       ========================================== -->
+  <div class="scroll-rail" id="scroll-rail" aria-hidden="true">
+    <span class="scroll-rail__num" id="scroll-rail-num">01 / 11</span>
+    <div class="scroll-rail__track">
+      <div class="scroll-rail__fill" id="scroll-rail-fill"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       PAGE TRANSITION & CINEMATIC EDITORIAL STRIPS
+       ========================================== -->
+  <div class="page-transition" id="page-transition" aria-hidden="true">
+    <!-- Minimal Editorial Loader Phase (1.0 - 1.1s) -->
+    <div class="transition-loader" id="transition-loader">
+      <div class="loader__content">
+        <span class="loader__logo">PAYFLOW</span>
+        <div class="loader__meta">
+          <span class="loader__step" id="loader-step">01 / 11</span>
+          <span class="loader__title" id="loader-title">INITIALIZING</span>
+        </div>
+        <div class="loader__progress-bar">
+          <div class="loader__progress-fill" id="loader-progress-fill"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 5 Vertical Mechanical Shutter Strips -->
+    <div class="transition-strips" id="transition-strips">
+      <div class="transition-strip strip--up" data-strip="1"></div>
+      <div class="transition-strip strip--down" data-strip="2"></div>
+      <div class="transition-strip strip--up" data-strip="3"></div>
+      <div class="transition-strip strip--down" data-strip="4"></div>
+      <div class="transition-strip strip--up" data-strip="5"></div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       01 NAVIGATION
+       ========================================== -->
+  <header class="navbar hero-animate" id="site-header">
+    <div class="navbar__inner">
+      <a href="#hero" class="navbar__logo" aria-label="PAYFLOW Home">
+        <span class="logo__text">PAYFLOW</span>
+        <span class="logo__dot">.</span>
+      </a>
+
+      <nav class="navbar__nav" aria-label="Main Navigation">
+        <ul class="nav__list">
+          <li class="nav__item dropdown" data-dropdown>
+            <button class="nav__link dropdown__toggle" aria-expanded="false">
+              Products <span class="chevron">↓</span>
+            </button>
+            <div class="dropdown__menu">
+              <div class="dropdown__grid">
+                <a href="#product-story" class="dropdown__card">
+                  <span class="dropdown__num">01</span>
+                  <strong class="dropdown__title">Core Payments</strong>
+                  <p class="dropdown__desc">Global processing with 24ms intelligent routing.</p>
+                </a>
+                <a href="#composition-stage" class="dropdown__card">
+                  <span class="dropdown__num">02</span>
+                  <strong class="dropdown__title">Smart Billing</strong>
+                  <p class="dropdown__desc">Subscription architecture built for enterprise scale.</p>
+                </a>
+                <a href="#flying-posters" class="dropdown__card">
+                  <span class="dropdown__num">03</span>
+                  <strong class="dropdown__title">Connect & Fraud</strong>
+                  <p class="dropdown__desc">Real-time risk scoring and marketplace payouts.</p>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav__item dropdown" data-dropdown>
+            <button class="nav__link dropdown__toggle" aria-expanded="false">
+              Solutions <span class="chevron">↓</span>
+            </button>
+            <div class="dropdown__menu">
+              <div class="dropdown__grid">
+                <a href="#editorial-statement" class="dropdown__card">
+                  <span class="dropdown__num">A</span>
+                  <strong class="dropdown__title">Global Commerce</strong>
+                  <p class="dropdown__desc">Cross-border multi-currency ledger engines.</p>
+                </a>
+                <a href="#pricing" class="dropdown__card">
+                  <span class="dropdown__num">B</span>
+                  <strong class="dropdown__title">SaaS Platforms</strong>
+                  <p class="dropdown__desc">Automated recurring billing & revenue management.</p>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav__item">
+            <a href="#developer-api" class="nav__link">Developers</a>
+          </li>
+          <li class="nav__item">
+            <a href="#faq" class="nav__link">Resources</a>
+          </li>
+          <li class="nav__item">
+            <a href="#pricing" class="nav__link">Pricing</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="navbar__actions">
+        <!-- Minimal Dark/Light Theme Toggle -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">
+          <span id="theme-toggle-text">DARK</span>
+        </button>
+
+        <a href="#pricing" class="btn btn--text">Sign in</a>
+        <a href="#pricing-calculator" class="btn btn--primary btn--magnetic">Get started</a>
+
+        <button class="hamburger" id="hamburger-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer__header">
+        <span class="logo__text">PAYFLOW</span>
+        <button class="mobile-drawer__close" id="mobile-drawer-close" aria-label="Close menu">&times;</button>
+      </div>
+      <nav class="mobile-drawer__nav">
+        <a href="#product-story" class="mobile-drawer__link"><span class="link__num">01</span> Products</a>
+        <a href="#image-reveal" class="mobile-drawer__link"><span class="link__num">02</span> Infrastructure</a>
+        <a href="#flying-posters" class="mobile-drawer__link"><span class="link__num">03</span> Platform Gallery</a>
+        <a href="#developer-api" class="mobile-drawer__link"><span class="link__num">04</span> Developers</a>
+        <a href="#pricing" class="mobile-drawer__link"><span class="link__num">05</span> Pricing</a>
+        <a href="#faq" class="mobile-drawer__link"><span class="link__num">06</span> FAQ</a>
+      </nav>
+      <div class="mobile-drawer__footer">
+        <a href="#pricing-calculator" class="btn btn--primary btn--full">Get started</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    
+    <!-- ==========================================
+         02 EXPLODED HERO (300svh Scroll Stage)
+         ========================================== -->
+    <section class="stage stage--hero" id="hero">
+      <div class="stage__sticky">
+        <div class="hero__bg-wrap img-container">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80" 
+               alt="Editorial Architectural Space" 
+               class="hero__bg-image fade-image"
+               loading="eager">
+          <div class="hero__overlay"></div>
+        </div>
+
+        <div class="hero__wordmark-container hero-animate">
+          <h1 class="hero__wordmark">PAYFLOW</h1>
+        </div>
+
+        <!-- Exploded Payment Interface Components -->
+        <div class="exploded-stage hero-animate" id="exploded-stage">
+          
+          <!-- Component 1: Central Payment Card -->
+          <div class="exp-card exp-card--main" id="exp-comp-main">
+            <div class="card__furniture">
+              <span class="furniture__tag">01 / PAYMENT</span>
+              <span class="furniture__chip">SECURE</span>
+            </div>
+            <div class="card__amount-row">
+              <span class="card__label">Amount Due</span>
+              <span class="card__amount">$2,840.00 <span class="card__currency">USD</span></span>
+            </div>
+            <div class="card__meta">
+              <div class="meta__col">
+                <span class="meta__label">Method</span>
+                <span class="meta__val">Visa •••• 4242</span>
+              </div>
+              <div class="meta__col">
+                <span class="meta__label">Status</span>
+                <span class="meta__val status--success">● Succeeded</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Component 2: Amount Badge (Upper Right) -->
+          <div class="exp-card exp-card--amount" id="exp-comp-amount">
+            <span class="exp-card__label">SETTLEMENT</span>
+            <span class="exp-card__val">+$2,840.00 USD</span>
+            <span class="exp-card__sub">Instant Bank Payout</span>
+          </div>
+
+          <!-- Component 3: Customer Badge (Upper Left) -->
+          <div class="exp-card exp-card--customer" id="exp-comp-customer">
+            <span class="exp-card__label">CUSTOMER</span>
+            <span class="exp-card__val">Acme Studio</span>
+            <span class="exp-card__sub">cus_8K2L9104A</span>
+          </div>
+
+          <!-- Component 4: API Snippet (Lower Right) -->
+          <div class="exp-card exp-card--api" id="exp-comp-api">
+            <span class="exp-card__label">API TELEMETRY</span>
+            <code>POST /v1/payments → 200 OK</code>
+            <span class="exp-card__sub">Execution: 24ms</span>
+          </div>
+
+          <!-- Component 5: Security Badge (Lower Left) -->
+          <div class="exp-card exp-card--security" id="exp-comp-security">
+            <span class="exp-card__label">SECURITY</span>
+            <span class="exp-card__val">PCI-DSS Level 1</span>
+            <span class="exp-card__sub">256-bit Hardware AES</span>
+          </div>
+
+          <!-- Component 6: Analytics Tile (Far Right) -->
+          <div class="exp-card exp-card--analytics" id="exp-comp-analytics">
+            <span class="exp-card__label">NETWORK</span>
+            <span class="exp-card__val">99.999%</span>
+            <span class="exp-card__sub">Global Uptime</span>
+          </div>
+
+          <!-- Component 7: Transaction Status Badge (Top) -->
+          <div class="exp-card exp-card--status" id="exp-comp-status">
+            <span class="exp-card__label">TRANSACTION</span>
+            <span class="exp-card__val">pf_8K2L91_EXP</span>
+            <span class="exp-card__sub">Verified & Ledgered</span>
+          </div>
+
+        </div>
+
+        <!-- Hero Bottom Straps -->
+        <div class="hero__straps hero-animate">
+          <div class="strap"><span class="strap__num">01</span> — GLOBAL PAYMENTS</div>
+          <div class="strap"><span class="strap__num">02</span> — PAYMENT INFRASTRUCTURE</div>
+          <div class="strap"><span class="strap__num">03</span> — DEVELOPER FIRST</div>
+        </div>
+
+        <div class="scroll-indicator hero-animate">
+          <span class="scroll-indicator__text">SCROLL TO EXPLODE</span>
+          <div class="scroll-indicator__line"></div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         03 PRODUCT STORY
+         ========================================== -->
+    <section class="strip strip--product" id="product-story">
+      <div class="container">
+        <div class="product-story__header">
+          <span class="section-furniture">03 / INFRASTRUCTURE</span>
+          <h2 class="editorial-heading word-reveal">
+            Engineered for high-volume transactions, zero-friction routing, and instant settlement.
+          </h2>
+        </div>
+
+        <div class="product-story__grid">
+          <div class="story-col">
+            <span class="col__num">01</span>
+            <h3 class="col__title">Global Velocity</h3>
+            <p class="col__text">
+              Traditional payment rails stall in multi-layered correspondent networks. Payflow bypasses legacy intermediaries using direct-to-bank optical telemetry and sub-50ms cryptographic consensus.
+            </p>
+          </div>
+          <div class="story-col">
+            <span class="col__num">02</span>
+            <h3 class="col__title">Adaptive Routing</h3>
+            <p class="col__text">
+              Our intelligent engine analyzes 140+ transaction parameters per microsecond, automatically switching acquirers to maximize authorization rates and eliminate false declines.
+            </p>
+          </div>
+          <div class="story-col">
+            <span class="col__num">03</span>
+            <h3 class="col__title">Automated Ledger</h3>
+            <p class="col__text">
+              Immutable double-entry balance accounting built directly into the payment layer. Every debit and credit is reconciled instantaneously across global accounts.
+            </p>
+          </div>
+        </div>
+
+        <div class="metrics-bar">
+          <div class="metric">
+            <span class="metric__val">$18.4B+</span>
+            <span class="metric__label">ANNUAL VOLUME</span>
+          </div>
+          <div class="metric">
+            <span class="metric__val">195+</span>
+            <span class="metric__label">COUNTRIES SERVED</span>
+          </div>
+          <div class="metric">
+            <span class="metric__val">24ms</span>
+            <span class="metric__label">AVG LATENCY</span>
+          </div>
+          <div class="metric">
+            <span class="metric__val">99.999%</span>
+            <span class="metric__label">SLA UPTIME</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         04 SECOND PINNED STAGE — IMAGE REVEAL (320svh)
+         ========================================== -->
+    <section class="stage stage--reveal" id="image-reveal">
+      <div class="stage__sticky">
+        <div class="reveal__frame img-container" id="reveal-frame">
+          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=80" 
+               alt="Monolithic Architectural Structure" 
+               class="reveal__image fade-image hover-zoom"
+               loading="lazy">
+          
+          <div class="reveal__headline-wrap">
+            <h2 class="reveal__headline" id="reveal-headline">
+              UNCOMPROMISING PRECISION
+            </h2>
+          </div>
+        </div>
+
+        <div class="reveal__caption-wrap" id="reveal-caption">
+          <span class="section-furniture">04 / REVEAL</span>
+          <p class="reveal__caption-text">
+            Built from first principles. Designed without legacy compromise. Payflow provides the financial bedrock for the next generation of global commerce platforms.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         05 EDITORIAL STATEMENT BAND (BLUSH)
+         ========================================== -->
+    <section class="strip strip--blush" id="editorial-statement">
+      <div class="container">
+        <div class="statement__top">
+          <span class="section-furniture">05 / PHILOSOPHY</span>
+          <!-- CAVEAT BRUSH ANNOTATION #1 -->
+          <span class="annotation">crafted for modern finance</span>
+        </div>
+
+        <div class="statement__quote-box">
+          <blockquote class="statement__quote word-reveal">
+            Money should move <br>
+            <em class="quote__italic">without getting in the way.</em>
+          </blockquote>
+        </div>
+
+        <div class="statement__columns">
+          <div class="stmt-col">
+            <h4 class="stmt-col__heading">INVISIBLE RUNTIME</h4>
+            <p class="stmt-col__body">
+              The best payment infrastructure is completely invisible. Customers complete checkout effortlessly while enterprise logic executes silently in the background.
+            </p>
+          </div>
+          <div class="stmt-col">
+            <h4 class="stmt-col__heading">PROGRAMMABLE MONEY</h4>
+            <p class="stmt-col__body">
+              Control payout schedules, split payments dynamically across sub-merchants, and enforce custom compliance rules directly in code.
+            </p>
+          </div>
+          <div class="stmt-col">
+            <h4 class="stmt-col__heading">NEVER COMPROMISE</h4>
+            <p class="stmt-col__body">
+              Zero tolerance for downtime, lost webhooks, or unhandled gateway errors. Every transaction is guaranteed with hardware security.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         06 FLYING POSTERS GALLERY (VANILLA JS 3D)
+         ========================================== -->
+    <section class="strip strip--dark strip--posters" id="flying-posters">
+      <div class="posters__header container">
+        <div class="header__left">
+          <span class="section-furniture section-furniture--light">06 / CAPABILITIES</span>
+          <h2 class="dark-heading">The Payflow Engine Suite</h2>
+        </div>
+        <div class="header__right">
+          <p class="dark-desc">
+            Explore our five foundational payment pillars. Drag, scroll, or move your mouse to inspect the infinite 3D gallery.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3D Perspective Stage Container -->
+      <div class="posters-viewport" id="posters-viewport">
+        <div class="posters-world" id="posters-world">
+          
+          <!-- Poster 1 -->
+          <article class="poster-card" data-index="0">
+            <div class="poster-card__img-wrap img-container">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" 
+                   alt="Payments Poster" class="poster-card__img fade-image" loading="lazy">
+            </div>
+            <div class="poster-card__meta">
+              <span class="poster-card__num">01</span>
+              <h3 class="poster-card__title">PAYMENTS</h3>
+              <p class="poster-card__sub">GLOBAL PROCESSING</p>
+            </div>
+          </article>
+
+          <!-- Poster 2 -->
+          <article class="poster-card" data-index="1">
+            <div class="poster-card__img-wrap img-container">
+              <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=800&q=80" 
+                   alt="Billing Poster" class="poster-card__img fade-image" loading="lazy">
+            </div>
+            <div class="poster-card__meta">
+              <span class="poster-card__num">02</span>
+              <h3 class="poster-card__title">BILLING</h3>
+              <p class="poster-card__sub">RECURRING ENGINE</p>
+            </div>
+          </article>
+
+          <!-- Poster 3 -->
+          <article class="poster-card" data-index="2">
+            <div class="poster-card__img-wrap img-container">
+              <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" 
+                   alt="Connect Poster" class="poster-card__img fade-image" loading="lazy">
+            </div>
+            <div class="poster-card__meta">
+              <span class="poster-card__num">03</span>
+              <h3 class="poster-card__title">CONNECT</h3>
+              <p class="poster-card__sub">MARKETPLACE PAYOUTS</p>
+            </div>
+          </article>
+
+          <!-- Poster 4 -->
+          <article class="poster-card" data-index="3">
+            <div class="poster-card__img-wrap img-container">
+              <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80" 
+                   alt="Fraud Poster" class="poster-card__img fade-image" loading="lazy">
+            </div>
+            <div class="poster-card__meta">
+              <span class="poster-card__num">04</span>
+              <h3 class="poster-card__title">FRAUD</h3>
+              <p class="poster-card__sub">RADAR RISK SHIELD</p>
+            </div>
+          </article>
+
+          <!-- Poster 5 -->
+          <article class="poster-card" data-index="4">
+            <div class="poster-card__img-wrap img-container">
+              <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=800&q=80" 
+                   alt="API Poster" class="poster-card__img fade-image" loading="lazy">
+            </div>
+            <div class="poster-card__meta">
+              <span class="poster-card__num">05</span>
+              <h3 class="poster-card__title">DEVELOPER API</h3>
+              <p class="poster-card__sub">COMPOSABLE INFRASTRUCTURE</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         07 DEVELOPER / API SECTION
+         ========================================== -->
+    <section class="strip strip--dark strip--api" id="developer-api">
+      <div class="container">
+        <div class="api__header">
+          <div class="api__title-group">
+            <span class="section-furniture section-furniture--light">07 / DEVELOPERS</span>
+            <h2 class="dark-heading">Designed for engineers. Built for scale.</h2>
+          </div>
+          <p class="dark-desc">
+            Integrate global payments with clean, idiomatic SDKs. Execute transactions in fewer than 10 lines of code.
+          </p>
+        </div>
+
+        <div class="code-box">
+          <div class="code-box__top">
+            <div class="code-box__tabs">
+              <button class="tab-btn active" data-lang="curl">cURL</button>
+              <button class="tab-btn" data-lang="node">Node.js</button>
+              <button class="tab-btn" data-lang="python">Python</button>
+              <button class="tab-btn" data-lang="java">Java</button>
+            </div>
+            <div class="code-box__endpoint">
+              <span class="method">POST</span>
+              <span class="url">/v1/payments</span>
+            </div>
+            <button class="copy-btn" id="copy-code-btn" aria-label="Copy code to clipboard">
+              <span id="copy-btn-text">Copy snippet</span>
+            </button>
+          </div>
+
+          <div class="code-box__body">
+            <pre><code id="code-display">
+<span class="code-comment"># Initialize a direct Payflow transaction</span>
+<span class="code-keyword">curl</span> -X POST https://api.payflow.com/v1/payments \
+  -H <span class="code-string">"Authorization: Bearer pf_live_8K2L9104A"</span> \
+  -H <span class="code-string">"Content-Type: application/json"</span> \
+  -d '{
+    <span class="code-key">"amount"</span>: <span class="code-num">284000</span>,
+    <span class="code-key">"currency"</span>: <span class="code-string">"usd"</span>,
+    <span class="code-key">"customer"</span>: <span class="code-string">"cus_8K2L91"</span>,
+    <span class="code-key">"capture"</span>: <span class="code-bool">true</span>
+  }'
+            </code></pre>
+          </div>
+
+          <div class="code-box__footer">
+            <div class="response-status">
+              <span class="status-dot"></span>
+              <span class="status-text">Response: 200 OK (24ms)</span>
+            </div>
+            <div class="response-preview">
+              <code>{ "status": "succeeded", "payment_id": "pf_8K2L91_SUCCESS" }</code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         08 COMPOSITION STAGE (360svh)
+         ========================================== -->
+    <section class="stage stage--comp" id="composition-stage">
+      <div class="stage__sticky">
+        <div class="comp__container container">
+          <div class="comp__left">
+            <span class="section-furniture section-furniture--light">08 / TELEMETRY</span>
+            <h2 class="dark-heading comp__heading">Deterministic performance at global scale.</h2>
+            
+            <div class="comp__rows" id="comp-rows">
+              <div class="comp-row" data-step="1">
+                <span class="row__num">01</span>
+                <span class="row__name">PAYMENTS PROCESSING</span>
+                <span class="row__val">24ms latency</span>
+              </div>
+              <div class="comp-row" data-step="2">
+                <span class="row__num">02</span>
+                <span class="row__name">BILLING & RECURRING</span>
+                <span class="row__val">41ms sync</span>
+              </div>
+              <div class="comp-row" data-step="3">
+                <span class="row__num">03</span>
+                <span class="row__name">CONNECT MARKETPLACE</span>
+                <span class="row__val">63ms ledger</span>
+              </div>
+              <div class="comp-row" data-step="4">
+                <span class="row__num">04</span>
+                <span class="row__name">FRAUD & RADAR SHIELD</span>
+                <span class="row__val">87ms score</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="comp__right">
+            <div class="comp__image-wrap img-container">
+              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80" 
+                   alt="Payflow Engineering Infrastructure" 
+                   class="comp__image fade-image hover-zoom" 
+                   id="comp-image"
+                   loading="lazy">
+              <span class="pink-label">BUILT FOR SCALE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         09 PRICING & CALCULATOR
+         ========================================== -->
+    <section class="strip strip--pricing" id="pricing">
+      <div class="container">
+        <div class="pricing__header">
+          <span class="section-furniture">09 / PRICING</span>
+          <h2 class="editorial-heading word-reveal">Predictable rates. Zero hidden markups.</h2>
+        </div>
+
+        <div class="pricing-table">
+          <div class="pricing-row pricing-row--head">
+            <span class="col-tier">TIER</span>
+            <span class="col-desc">DESCRIPTION</span>
+            <span class="col-rate">RATE</span>
+          </div>
+
+          <div class="pricing-row">
+            <div class="col-tier">
+              <strong class="tier-title">STARTER</strong>
+              <span class="tier-badge">Small Teams</span>
+            </div>
+            <div class="col-desc">
+              <em class="desc-text">Essential processing with standard 24ms routing and default fraud protection.</em>
+            </div>
+            <div class="col-rate">
+              <span class="price-pink">$0</span> <span class="rate-sub">/ month + 2.9%</span>
+            </div>
+          </div>
+
+          <div class="pricing-row">
+            <div class="col-tier">
+              <strong class="tier-title">GROWTH</strong>
+              <span class="tier-badge">Scaling Companies</span>
+            </div>
+            <div class="col-desc">
+              <em class="desc-text">Advanced telemetry, multi-currency ledgering, and dedicated support.</em>
+            </div>
+            <div class="col-rate">
+              <span class="price-pink">$49</span> <span class="rate-sub">/ month + 2.2%</span>
+            </div>
+          </div>
+
+          <div class="pricing-row">
+            <div class="col-tier">
+              <strong class="tier-title">SCALE</strong>
+              <span class="tier-badge">Enterprise</span>
+            </div>
+            <div class="col-desc">
+              <em class="desc-text">Custom interchange-plus pricing, dedicated SLAs, and hardware security nodes.</em>
+            </div>
+            <div class="col-rate">
+              <span class="price-pink">TALK TO US</span>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- PRICING CALCULATOR -->
+        <div class="calculator-box" id="pricing-calculator">
+          <div class="calculator__header">
+            <div class="calc__title-wrap">
+              <h3 class="calc__title">Fee & Savings Calculator</h3>
+              <!-- CAVEAT BRUSH ANNOTATION #2 -->
+              <span class="annotation">instant estimation</span>
+            </div>
+            <p class="calc__desc">Estimate your monthly processing fee and potential savings with Payflow adaptive routing.</p>
+          </div>
+
+          <div class="calculator__grid">
+            <div class="calc__inputs">
+              <div class="calc-group">
+                <label for="volume-input" class="calc-label">Monthly Volume ($USD)</label>
+                <div class="calc-input-wrap">
+                  <span class="currency-symbol">$</span>
+                  <input type="number" id="volume-input" value="150000" min="1000" max="10000000" step="5000">
+                </div>
+                <input type="range" id="volume-range" value="150000" min="1000" max="2000000" step="5000" class="range-slider">
+              </div>
+
+              <div class="calc-group">
+                <label for="tx-size-input" class="calc-label">Average Transaction Size ($USD)</label>
+                <div class="calc-input-wrap">
+                  <span class="currency-symbol">$</span>
+                  <input type="number" id="tx-size-input" value="85" min="5" max="5000" step="5">
+                </div>
+                <input type="range" id="tx-size-range" value="85" min="5" max="1000" step="5" class="range-slider">
+              </div>
+            </div>
+
+            <div class="calc__results">
+              <div class="res-card">
+                <span class="res-card__label">ESTIMATED TRANSACTIONS</span>
+                <span class="res-card__val" id="calc-tx-count">1,764</span>
+                <span class="res-card__sub">transactions / mo</span>
+              </div>
+              <div class="res-card">
+                <span class="res-card__label">PAYFLOW MONTHLY COST</span>
+                <span class="res-card__val price-pink" id="calc-payflow-cost">$3,349</span>
+                <span class="res-card__sub">effective rate ~2.23%</span>
+              </div>
+              <div class="res-card res-card--highlight">
+                <span class="res-card__label">ESTIMATED ANNUAL SAVINGS</span>
+                <span class="res-card__val price-pink" id="calc-annual-savings">$11,840</span>
+                <span class="res-card__sub">vs traditional processors</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         10 FAQ
+         ========================================== -->
+    <section class="strip strip--faq" id="faq">
+      <div class="container">
+        <div class="faq__header">
+          <span class="section-furniture">10 / FAQ</span>
+          <h2 class="editorial-heading word-reveal">Everything you need to know about Payflow.</h2>
+        </div>
+
+        <div class="faq__list">
+          
+          <details class="faq__item">
+            <summary class="faq__summary">
+              <span class="faq__question">How quickly can we integrate Payflow?</span>
+              <span class="faq__toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__content">
+              <p>Most developer teams integrate Payflow in fewer than 48 hours. Our REST API and drop-in UI components allow you to accept payments instantly with minimal code.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__summary">
+              <span class="faq__question">Which currencies and payment methods are supported?</span>
+              <span class="faq__toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__content">
+              <p>Payflow supports 135+ currencies and all major payment methods including Visa, Mastercard, American Express, Apple Pay, Google Pay, SEPA, ACH, and regional bank rails.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__summary">
+              <span class="faq__question">How does payout settlement work?</span>
+              <span class="faq__toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__content">
+              <p>Settlement occurs on a rolling T+1 or instant schedule depending on your account tier. Funds are transferred directly to your commercial bank account via local clearing systems.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__summary">
+              <span class="faq__question">Can Payflow handle subscriptions and complex billing schedules?</span>
+              <span class="faq__toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__content">
+              <p>Yes. Payflow Billing supports recurring subscriptions, usage-based metering, tiered pricing, dunning recovery, and automated tax calculation natively.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__summary">
+              <span class="faq__question">What happens when payments fail or get declined?</span>
+              <span class="faq__toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__content">
+              <p>Our intelligent routing engine retries declined transactions in real-time across alternate acquiring banks and updates expired cards automatically through network tokens.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__summary">
+              <span class="faq__question">How does fraud protection work?</span>
+              <span class="faq__toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__content">
+              <p>Payflow Radar evaluates every transaction against billions of global signals using hardware-accelerated ML models, stopping fraudulent attempts without impacting legitimate customers.</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         11 CLOSER / FOOTER
+         ========================================== -->
+    <footer class="closer" id="closer">
+      <div class="container">
+        <div class="closer__top">
+          <div class="closer__left">
+            <span class="section-furniture section-furniture--light">11 / CLOSER</span>
+            <h2 class="closer__headline">
+              Ready to upgrade your financial infrastructure?
+            </h2>
+            <p class="closer__sub">
+              Join leading global technology companies powering their transaction volume with Payflow.
+            </p>
+            <div class="closer__actions">
+              <a href="#pricing-calculator" class="btn btn--primary btn--large btn--magnetic">Start building with Payflow</a>
+              <a href="#developer-api" class="btn btn--secondary btn--large">Read documentation</a>
+            </div>
+          </div>
+          <div class="closer__right">
+            <!-- CAVEAT BRUSH ANNOTATION #3 -->
+            <span class="annotation annotation--dark">by payflow studio</span>
+          </div>
+        </div>
+
+        <div class="closer__wordmark-wrap">
+          <span class="closer__wordmark">PAYFLOW</span>
+        </div>
+
+        <div class="closer__bottom">
+          <div class="closer__col">
+            <span class="col__label">PRODUCTS</span>
+            <a href="#product-story" class="col__link">Core Payments</a>
+            <a href="#composition-stage" class="col__link">Smart Billing</a>
+            <a href="#flying-posters" class="col__link">Connect Payouts</a>
+            <a href="#flying-posters" class="col__link">Radar Fraud Shield</a>
+          </div>
+
+          <div class="closer__col">
+            <span class="col__label">DEVELOPERS</span>
+            <a href="#developer-api" class="col__link">API Reference</a>
+            <a href="#developer-api" class="col__link">SDK Libraries</a>
+            <a href="#hero" class="col__link">System Status</a>
+            <a href="#product-story" class="col__link">Release Notes</a>
+          </div>
+
+          <div class="closer__col">
+            <span class="col__label">COMPANY</span>
+            <a href="#product-story" class="col__link">About Payflow</a>
+            <a href="#editorial-statement" class="col__link">Manifesto</a>
+            <a href="#pricing" class="col__link">Careers</a>
+            <a href="#faq" class="col__link">Contact Sales</a>
+          </div>
+
+          <div class="closer__col closer__col--meta">
+            <span class="col__label">SYSTEM</span>
+            <span class="col__meta-val">Version 4.2.0-Production</span>
+            <span class="col__meta-val">Built with Pure Vanilla JS</span>
+            <span class="col__meta-val">© 2026 PAYFLOW Infrastructure Inc.</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
